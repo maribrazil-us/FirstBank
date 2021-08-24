@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/navbar.js';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './components/home.js';
+import CreateAccount from './components/createaccount.js';
+import Deposit from './components/deposit.js';
+import Withdraw from './components/withdraw.js';
+import AllData from './components/alldata.js';
+import { HashRouter } from 'react-router-dom';
+import React, { useContext } from 'react';
+import UserContext from './components/context';
+
 
 function App() {
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <HashRouter>
+       <NavBar/>
+       <UserContext.Provider 
+           value={{users:[{name: 'default', email: 'default@mit.edu', password: 'defaultpwd', balance: 100}]}}>
+        <Route path="/" exact component={Home} />
+        <Route path="/CreateAccount/" component={CreateAccount} />
+        <Route path="/deposit/" component={Deposit} />
+        <Route path="/withdraw/" component={Withdraw} />
+        <Route path="/alldata/" component={AllData} />
+        </UserContext.Provider>
+       </HashRouter>
+      
   );
 }
 
-export default App;
+export default App
+
