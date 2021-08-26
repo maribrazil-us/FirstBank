@@ -1,6 +1,7 @@
 
 
 function NavBar(){
+    
     return(
       <>
       <nav className="navbar navbar-expand-md navbar-light bg-light">
@@ -22,7 +23,7 @@ function NavBar(){
             <li className="nav-item">
               <a className="nav-link" data-toggle="tooltip" data-placement="bottom" title="See all transactions" href="#/alldata/">All Data</a>
             </li>
-            </ul>
+          </ul>
         </div>
       </nav>
       </>
