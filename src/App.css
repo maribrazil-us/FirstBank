@@ -12,6 +12,7 @@ body {
 .navbar-brand{
   font-size: calc(10px + 2vmin);
   font-weight: bold;
+  
 }  
 
 .active a{
@@ -22,3 +23,6 @@ body {
   border-bottom: #ffce3f solid 5px ;
 }
 
+h1 {
+  text-align: center;
+}

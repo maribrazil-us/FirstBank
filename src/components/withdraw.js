@@ -9,7 +9,6 @@ function Withdraw(){
   const [balance, setBalance] = React.useState(ctx.users[ctx.users.length -1].balance);
   const [validTransaction, setValidTransaction] = React.useState(false)
   
-  
 
 const handleChange = (event) => {
   const amount = Number(event.target.value);
@@ -43,7 +42,7 @@ function handleSubmit(event){
   }
   
   return (
-    <div className="dataEntry" style={{marginTop: "2rem"}}>
+    <div className="mx-auto" style={{marginTop: "2rem", maxWidth: "25rem"}}>
       <h1>Withdraw</h1> 
       <br/>
     <Card
@@ -71,4 +70,4 @@ function handleSubmit(event){
 
 }
 
-  export default Withdraw;
+export default Withdraw;

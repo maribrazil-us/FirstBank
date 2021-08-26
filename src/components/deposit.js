@@ -45,7 +45,7 @@ const handleChange = (event) => {
     }
     
     return (
-      <div className="dataEntry"style={{marginTop: "2rem"}} >
+      <div className="mx-auto" style={{marginTop: "2rem", maxWidth: "25rem"}} >
         <h1>Deposit</h1> 
         <br/>
       <Card

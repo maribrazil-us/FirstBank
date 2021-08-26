@@ -1,6 +1,5 @@
 import react, {useContext} from 'react';
 import UserContext from './context';
-import Card from './card';
 
 function AllData(){
 
@@ -9,10 +8,10 @@ function AllData(){
     console.log(ctx);
     
     return (
-      <div style={{marginTop: "2rem"}}>
+      <div className="mx-auto" style={{marginTop: "2rem", maxWidth: "75rem"}}>
       <h1>All Data</h1>
       <br></br>  
-          <div className="card bg-light mx-auto" margin="20px auto" style={{maxWidth: "75rem"}}>
+          <div className="card bg-light mx-auto" margin="10px auto" style={{maxWidth: "75rem"}}>
           <div class="card-body">
            <table className="table table-striped">
              <thead className="thread-dark">
@@ -40,6 +39,6 @@ function AllData(){
             </div>
       </div>
     );  
-        }
+  }
 
   export default AllData;

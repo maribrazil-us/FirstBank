@@ -53,7 +53,7 @@ function CreateAccount() {
 
     return (
   
-    <div className="dataEntry" style={{marginTop: "2rem"}}>
+    <div className="mx-auto" style={{marginTop: "2rem", maxWidth: "25rem"}}>
         <h1>Create Account</h1> 
         <br/>
     <Card

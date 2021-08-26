@@ -1,4 +1,3 @@
-import Card from './card.js'
 import UserContext from './context';
 import React from 'react'
 
@@ -8,7 +7,7 @@ function Home(){
     return (
       <div>
       <br/>      
-      <div className="card text-center text-white bg-warning mb-3" style={{maxWidth: "35rem"}}>
+      <div className="card text-center text-white mx-auto bg-warning mb-3" style={{maxWidth: "35rem"}}>
         <div className="card-body">  
           <h3 className="card-title">WELCOME TO FIRST BANK OF REACT</h3>
           <p className="card-text">For all your banking needs</p>
