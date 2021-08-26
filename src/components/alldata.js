@@ -13,7 +13,7 @@ function AllData(){
       <br></br>  
           <div className="card bg-light mx-auto" margin="10px auto" style={{maxWidth: "75rem"}}>
           <div class="card-body">
-           <table className="table table-striped">
+           <table className="table table-striped mx-auto">
              <thead className="thread-dark">
                <tr>
                <th scope='col' >User</th>

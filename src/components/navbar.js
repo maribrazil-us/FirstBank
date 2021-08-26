@@ -1,10 +1,13 @@
 import React from "react";
 import {NavLink, Link, useLocation} from 'react-router-dom';
-import { Navbar, Container, NavDropdown, Nav, Dropdown, NavbarBrand } from "react-bootstrap";
-
+import { Navbar, Container, NavDropdown, Nav, Dropdown, NavbarBrand, Text } from "react-bootstrap";
+import UserContext from './context';
+import {useContext} from 'react';
 
 
 function NavBar(){
+
+  let ctx = useContext(UserContext);
   const location = useLocation();
   const { pathname } = location;
   const splitLocation = pathname.split("/");
@@ -15,7 +18,7 @@ function NavBar(){
           <Navbar.Brand href="#">FBR</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto"></Nav>
+          <Nav className="mr-auto"></Nav>
               <Nav className={splitLocation[1] === "createaccount" ? "active" : ""}>
                 <Link className="nav-link"  data-toggle="tooltip" data-placement="bottom" title="Create an account today" to="/createaccount/">Create Account</Link>
               </Nav>
@@ -28,7 +31,8 @@ function NavBar(){
               <Nav className={splitLocation[1] === "alldata" ? "active" : ""}>
                 <Link className="nav-link" data-toggle="tooltip" data-placement="bottom" title="See all transactions" to="/alldata/">All Data</Link>
               </Nav>
-            </Navbar.Collapse>
+              <Navbar.Text> Account Of: <a>{ctx.users[ctx.users.length -1].name}</a></Navbar.Text>
+           </Navbar.Collapse>
          </Navbar>
         </>
       );

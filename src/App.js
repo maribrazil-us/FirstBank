@@ -15,14 +15,16 @@ function App() {
     
   return (
      <HashRouter>
-       <NavBar/>
+       
        <UserContext.Provider 
-           value={{users:[{name: 'default', email: 'default@mit.edu', password: 'defaultpwd', balance: 0}]}}>
+           value={{users:[{name: 'None', email: 'none@mit.edu', password: 'defaultpwd', balance: 0}]}}>
+        <NavBar/>
         <Route path="/" exact component={Home} />
         <Route path="/CreateAccount/" component={CreateAccount} />
         <Route path="/deposit/" component={Deposit} />
         <Route path="/withdraw/" component={Withdraw} />
         <Route path="/alldata/" component={AllData} />
+      
         </UserContext.Provider>
        </HashRouter>
       
