@@ -55,13 +55,13 @@ function handleSubmit(event){
             Withdrawal Amount<br/>
             <input type="number" min="0" placeholder="Enter Amount" value={deposit} onChange={handleChange}/><br/>
             <br></br>
-            <button type="submit" className="btn btn-light" onClick={handleSubmit} disabled={!validTransaction} >Withdraw</button>
+            <button type="submit" className="btn btn-warning" onClick={handleSubmit} disabled={!validTransaction} >Withdraw</button>
             </>
       ):(
         <>
               <h2 id="total">Balance ${balance}</h2>
               <h5>Success! Withdrawal complete.</h5>
-              <button type="submit" className="btn btn-light" onClick={clearForm}>Make another withdrawal</button>
+              <button type="submit" className="btn btn-warning" onClick={clearForm}>Make another withdrawal</button>
               </>
       )
       }

@@ -17,7 +17,7 @@ function App() {
      <HashRouter>
        <NavBar/>
        <UserContext.Provider 
-           value={{users:[{name: 'default', email: 'default@mit.edu', password: 'defaultpwd', balance: 100}]}}>
+           value={{users:[{name: 'default', email: 'default@mit.edu', password: 'defaultpwd', balance: 0}]}}>
         <Route path="/" exact component={Home} />
         <Route path="/CreateAccount/" component={CreateAccount} />
         <Route path="/deposit/" component={Deposit} />

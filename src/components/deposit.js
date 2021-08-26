@@ -57,13 +57,13 @@ const handleChange = (event) => {
               Deposit Amount<br/>
               <input type="number" min="0" placeholder="Enter Amount" value={deposit} onChange={handleChange}/><br/>
               <br></br>
-              <button type="submit" className="btn btn-light" onClick={handleSubmit} disabled={!validTransaction} >Deposit</button>
+              <button type="submit" className="btn btn-warning" onClick={handleSubmit} disabled={!validTransaction} >Deposit</button>
               </>
         ) : (
           <>
               <h2 id="total">Balance ${balance}</h2>
               <h5>Success! Amount deposited.</h5>
-              <button type="submit" className="btn btn-light" onClick={clearForm}>Make another deposit</button>
+              <button type="submit" className="btn btn-warning" onClick={clearForm}>Make another deposit</button>
               </>
         )
         }

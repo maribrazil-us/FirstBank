@@ -3,22 +3,23 @@ import Card from './card';
 import UserContext from './context';
 import { useContext } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Bootstrap from 'react-bootstrap';
 
 function CreateAccount() {
-
+  
   const context = useContext(UserContext);
+  const [input, setInput] = React.useState(false);
+  
+  
+  const formikProps = {initialValues: {name: '', email: '', password: ''}, 
 
-  const formikProps = {
-    initialValues: {
-      name: '',
-      email: '',
-      password: ''
-    },
+      
     validate: values => {
       const errors = {};
       if (!values.name) {
         errors.name = 'Required';
-      }
+      };
+                    
       if (!values.email) {
         errors.email = 'Required';
       }
@@ -31,19 +32,26 @@ function CreateAccount() {
       return errors;
     },
 
+    handleChange: (event) => {
+      const userInput = event.target.value;
+        if (userInput != '') {
+        setInput(true);
+        }
+    },  
+
     onSubmit: (values, { resetForm }) => {
       context.users.push({
         name: values.name,
         email: values.email,
         password: values.password,
-        balance: 100,
+        balance: 0,
       });
       resetForm();
       alert(`Successfully created account for ${values.name}`);
     }
   };
 
-  return (
+    return (
   
     <div className="dataEntry" style={{marginLeft: "2rem", marginTop: "2rem"}}>
         <h1>Create Account</h1> 
@@ -54,7 +62,7 @@ function CreateAccount() {
         body={
    <div className='content'>
       <Formik {...formikProps}>
-        <Form>
+        <Form onChange={formikProps.handleChange}>
           <div className='form-group'>
             <label htmlFor='username'>Name</label>
             <Field className='form-control' id='name' name='name' placeholder='Enter Name' />
@@ -62,9 +70,9 @@ function CreateAccount() {
           </div>
 
           <div className='form-group'>
-            <label htmlFor='username'>Email</label>
+            <label htmlFor='email'>Email</label>
             <Field className='form-control' id='email' name='email' type='email' placeholder='Enter Email' />
-            <ErrorMessage className='error' name='email' component='div' />
+            <ErrorMessage className='error' name='email' component='div'/>
           </div>
 
           <div className='form-group'>
@@ -74,8 +82,9 @@ function CreateAccount() {
           </div>
           
           <br/>
-          <button type='submit' className='btn btn-primary'>Create Account</button>
+          <button type='submit' className='btn btn-warning' disabled={!input}>Create Account</button>
         </Form>
+        
       </Formik>
     </div>
 }
@@ -87,4 +96,4 @@ function CreateAccount() {
 }
 
 
-  export default CreateAccount;
+  export default CreateAccount
