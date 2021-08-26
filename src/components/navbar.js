@@ -1,32 +1,37 @@
+import React from "react";
+import {NavLink, Link, useLocation} from 'react-router-dom';
+import { Navbar, Container, NavDropdown, Nav, Dropdown, NavbarBrand } from "react-bootstrap";
+
 
 
 function NavBar(){
+  const location = useLocation();
+  const { pathname } = location;
+  const splitLocation = pathname.split("/");
     
-    return(
-      <>
-      <nav className="navbar navbar-expand-md navbar-light bg-light">
-        <a className="navbar-brand" href="#">FBR</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link" data-toggle="tooltip" data-placement="bottom" title="Create an account today" href="#/createaccount/">Create Account</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" data-toggle="tooltip" data-placement="bottom" title="Make a deposit to your account" href="#/deposit/">Deposit</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" data-toggle="tooltip" data-placement="bottom" title="Withdraw from your account" href="#/withdraw/">Withdraw</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" data-toggle="tooltip" data-placement="bottom" title="See all transactions" href="#/alldata/">All Data</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      </>
-    );
-  }
+  return(
+        <>
+        <Navbar collapseOnSelect expand="md" bg="light" variant="light">
+          <Navbar.Brand href="#">FBR</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto"></Nav>
+              <Nav className={splitLocation[1] === "createaccount" ? "active" : ""}>
+                <Link className="nav-link"  data-toggle="tooltip" data-placement="bottom" title="Create an account today" to="/createaccount/">Create Account</Link>
+              </Nav>
+              <Nav className={splitLocation[1] === "deposit" ? "active" : ""}>
+                <Link className="nav-link"  data-toggle="tooltip" data-placement="bottom" title="Make a deposit to your account" to="/deposit/">Deposit</Link>
+              </Nav>
+              <Nav className={splitLocation[1] === "withdraw" ? "active" : ""}>
+                <Link className="nav-link" data-toggle="tooltip" data-placement="bottom" title="Withdraw from your account" to="/withdraw/">Withdraw</Link>
+              </Nav>
+              <Nav className={splitLocation[1] === "alldata" ? "active" : ""}>
+                <Link className="nav-link" data-toggle="tooltip" data-placement="bottom" title="See all transactions" to="/alldata/">All Data</Link>
+              </Nav>
+            </Navbar.Collapse>
+         </Navbar>
+        </>
+      );
+    }
+    
 export default NavBar;

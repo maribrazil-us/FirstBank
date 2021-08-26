@@ -1,32 +1,6 @@
-.App {
-  text-align: center;
-  background-color: blue;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 body {
-      background-color: #fafdf3;
+      background-color: whitesmoke;
       justify-content: center;
       align-content: center;
       flex-direction: row;
@@ -39,4 +13,12 @@ body {
   font-size: calc(10px + 2vmin);
   font-weight: bold;
 }  
+
+.active a{
+  border-bottom: #ffce3f solid 5px ;
+}
+
+.nav-link :hover {
+  border-bottom: #ffce3f solid 5px ;
+}
 

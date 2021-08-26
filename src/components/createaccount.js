@@ -53,7 +53,7 @@ function CreateAccount() {
 
     return (
   
-    <div className="dataEntry" style={{marginLeft: "2rem", marginTop: "2rem"}}>
+    <div className="dataEntry" style={{marginTop: "2rem"}}>
         <h1>Create Account</h1> 
         <br/>
     <Card

@@ -9,7 +9,7 @@ function AllData(){
     console.log(ctx);
     
     return (
-      <div style={{marginLeft: "2rem", marginRight: "2rem", marginTop: "2rem"}}>
+      <div style={{marginTop: "2rem"}}>
       <h1>All Data</h1>
       <br></br>  
           <div className="card bg-light mx-auto" margin="20px auto" style={{maxWidth: "75rem"}}>

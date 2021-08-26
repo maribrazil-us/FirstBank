@@ -43,7 +43,7 @@ function handleSubmit(event){
   }
   
   return (
-    <div className="dataEntry" style={{marginLeft: "2rem", marginTop: "2rem"}}>
+    <div className="dataEntry" style={{marginTop: "2rem"}}>
       <h1>Withdraw</h1> 
       <br/>
     <Card
